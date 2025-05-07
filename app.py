@@ -249,9 +249,9 @@ def display_home():
                         )
                     else:
                         fig = px.line(
-                            df.sort_values(date_col), x=date_col, y=value_col,
-                            title=f"{value_col} over time",
-                            color_discrete_sequence=[color_theme]
+                            df.sort_values(date_col), x=date_col, y=value_col, color=group_col,
+                            title=f"{value_col} over time (grouped by {group_col})",
+                            color_discrete_sequence=px.colors.sequential.get(color_theme, px.colors.sequential.Viridis)
                         )
                     fig.update_layout(xaxis_title="Date", yaxis_title=value_col)
                     st.plotly_chart(fig, use_container_width=True)
