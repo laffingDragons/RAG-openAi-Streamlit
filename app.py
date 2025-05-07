@@ -17,6 +17,7 @@ import os
 from PIL import Image
 from io import BytesIO
 import base64
+from plotly.subplots import make_subplots
 
 # Set page configuration
 st.set_page_config(
